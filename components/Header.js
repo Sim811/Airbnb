@@ -19,7 +19,7 @@ function Header() {
           objectPosition="left"
         />
       </div>
-
+ 
         {/* Middle of Header */}
       <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm ">
         <input className="pl-5 bg-transparent 
@@ -34,8 +34,13 @@ function Header() {
       </div>
 
         {/* Right of Header */} 
-      <div>
-        <p>Become a host</p>
+      <div className="flex items-center justify-end space-x-4 text-gray-400">
+        <p className="hidden md:inline cursor-pointer">Become a host</p>
+        <GlobeAltIcon className="h-6 cursor-pointer" />
+        <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
+          <MenuIcon className="h-6" />
+          <UserCircleIcon className="h-6" />
+        </div>
       </div>
     </header>
   )
