@@ -42,7 +42,11 @@ function Maps( {searchResults} ) {
           offsetLeft={-20}
           offsetTop={-10}
           >
-          <p onClick={() => setSelectedLocation(e)} className="cursor-pointer text-2xl animate-bounce"          
+          <p 
+            onClick={() => setSelectedLocation(e)} 
+            className="cursor-pointer text-2xl animate-bounce"
+            role="img"          
+            aria-label="push-pin"
           >📌</p>
           {/* 
             added import 'mapbox-gl/dist/mapbox-gl.css'
@@ -50,7 +54,19 @@ function Maps( {searchResults} ) {
            */}
         </Marker>
       
-  
+           
+        {selectedLocation.long === e.long ? (
+          <Popup
+            onClose={() => setSelectedLocation({})}
+            closeOnClick={true}
+            latitude={e.lat}
+            longitude={e.long}
+          >
+            {e.title}
+          </Popup>
+        ) : (
+          false
+        )}
       </div>
     ))}
   </Map>
