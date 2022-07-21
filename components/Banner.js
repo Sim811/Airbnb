@@ -16,6 +16,7 @@ function Banner() {
         src="https://links.papareact.com/0fm"
         layout="fill"
         objectFit="cover"
+        alt="image"
       />
 
       <div className="absolute top-1/2 w-full text-center">
