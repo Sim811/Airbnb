@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Maps from "../components/Maps";
 
 
 function Search({searchResults}) {
@@ -36,7 +37,7 @@ function Search({searchResults}) {
               <p className='button'> More Filters </p>
             </div>
 
-            <div classNam="flex flex-column">
+            <div className="">
             {searchResults.map(
               ({img, location, title, description, star, price, total}) => (
               <InfoCard
@@ -52,7 +53,12 @@ function Search({searchResults}) {
                ))}
             </div>
           </section>
+
+          <section className="hidden xl:inline-flex xl:min-w-[600px]">
+            <Maps searchResults={searchResults} />
+          </section>
         </main>
+
 
       <Footer /> 
     </div>
