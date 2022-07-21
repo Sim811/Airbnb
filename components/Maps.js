@@ -33,10 +33,10 @@ function Maps( {searchResults} ) {
     >
 
     {searchResults.map(e => (
-      <div >
+      <div key={e.long} >
+        
 
         <Marker
-          key={e.long}
           longitude={e.long}
           latitude={e.lat}
           offsetLeft={-20}
